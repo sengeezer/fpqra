@@ -22,8 +22,15 @@ class App extends Component {
           name: 'Item 3',
           isComplete: false
         }
-      ]
+      ],
+      currentTodo: '',
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+  handleInputChange(e) {
+    this.setState({
+      currentTodo: e.target.value
+    });
   }
   render() {
     return (
@@ -37,7 +44,7 @@ class App extends Component {
         </p>
         <div className="Todo-App">
           <form>
-            <input type="text" />
+            <input type="text" onChange={this.handleInputChange} value={this.state.currentTodo} />
 
           </form>
           <div className="Todo-List">
