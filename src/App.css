@@ -62,3 +62,7 @@ span.delete-item a {
 .toolbar a {
   padding: 0 5px;
 }
+
+.toolbar a.active {
+  font-weight: bold;
+}
