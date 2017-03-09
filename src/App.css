@@ -14,10 +14,6 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
-}
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -56,4 +52,13 @@ span.delete-item a {
 
 .error {
   color: red;
+}
+
+.toolbar {
+  margin : 15px 0;
+  font-size: 0.8em;
+}
+
+.toolbar a {
+  padding: 0 5px;
 }

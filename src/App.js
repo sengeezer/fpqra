@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {TodoForm, TodoList} from './components/todo';
+import {TodoForm, TodoList, Toolbar} from './components/todo';
 import {addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo} from './lib/todoHelpers';
 import {pipe, partial} from './lib/utils';
 
@@ -75,15 +75,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>React Todos</h2>
         </div>
-        <p className="App-intro">
-          A simple Todo App.
-        </p>
         <div className="Todo-App">
           {this.state.errorMessage && <span className="error">{this.state.errorMessage}</span>}
           <TodoForm handleInputChange={this.handleInputChange}
             currentTodo={this.state.currentTodo}
             handleSubmit={submitHandler}
             />
+          <Toolbar />
           <TodoList
             handleToggle={this.handleToggle}
             todos={this.state.todos}
