@@ -8,7 +8,7 @@
     {
       "id": 2,
       "name": "Item 2",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": 3,
