@@ -28,6 +28,13 @@ export class Router extends Component {
     };
   }
 
+  componentDidMount() {
+    // track bwd & fwd buttons
+    window.onpopstate = () => {
+      this.setState({route: getCurrentPath()});
+    };
+  }
+
   render() {
     return (
       <div>
