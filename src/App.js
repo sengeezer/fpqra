@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {TodoForm, TodoList, Toolbar} from './components/todo';
-import {loadTodos} from './lib/todoService';
+import {loadTodos, createTodo} from './lib/todoService';
 import {addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo, filterTodos} from './lib/todoHelpers';
 import {pipe, partial} from './lib/utils';
 
@@ -51,6 +51,7 @@ class App extends Component {
       currentTodo: '',
       errorMessage: ''
     });
+    createTodo(newTodo).then(() => console.log('todo added'));
   };
 
   handleEmptySubmit = (evt) => {
