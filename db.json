@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "Item 1",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Item 2",
+      "isComplete": false
+    },
+    {
+      "id": 3,
+      "name": "Item 3",
+      "isComplete": false
+    },
+    {
+      "id": 4,
+      "name": "Very fletching",
+      "isComplete": true
+    }
+  ]
+}

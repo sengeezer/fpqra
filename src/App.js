@@ -2,34 +2,23 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {TodoForm, TodoList, Toolbar} from './components/todo';
+import {loadTodos} from './lib/todoService';
 import {addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo, filterTodos} from './lib/todoHelpers';
 import {pipe, partial} from './lib/utils';
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: 1,
-        name: 'Item 1',
-        isComplete: true
-      },
-      {
-        id: 2,
-        name: 'Item 2',
-        isComplete: false
-      },
-      {
-        id: 3,
-        name: 'Item 3',
-        isComplete: false
-      }
-    ],
+    todos: [],
     currentTodo: '',
   };
 
   static contextTypes = {
     route: React.PropTypes.string
   };
+
+  componentDidMount() {
+    loadTodos().then(todos => this.setState({todos}));
+  }
 
   handleRemove = (id, evt) => {
     evt.preventDefault();
